@@ -21,13 +21,13 @@ Atkarībā no izvēlētās secības kolonnas (`adrese`, `istabu skaits`, `platī
 Lietotājs terminālī ievada sev vēlamos kritērijus dzīvokļu atlasei šādā secībā:
 
 ```shell
-python kriteriji.py <reģions> <max-īre> <min-istabu skaits> <secības-kolonna>
+python find.py <reģions> <max-īre> <min-istabu skaits> <secības-kolonna>
 ```
 
 Piemērs:
 
 ```shell
-python kriteriji.py Āgenskalns 500 2 cena
+python find.py Āgenskalns 500 2 cena
 ```
 
 ## Izmantotās bibliotēkas
