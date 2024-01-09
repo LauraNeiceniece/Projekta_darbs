@@ -14,4 +14,18 @@ adrese, istabu skaits, platība m2, cena, hipersaite
 
 ```
 
-Atkarībā no izvēļētās secības kolonnas (`adrese`, `istabu skaits`, `platība m2`, `cena`) sarakstam ir jābūt sakārtotam augošā secībā
+Atkarībā no izvēlētās secības kolonnas (`adrese`, `istabu skaits`, `platība m2`, `cena`) sarakstam ir jābūt sakārtotam augošā secībā
+
+##Programmas izpilde
+
+Lietotājs terminālī ievada sev vēlamos kritērijus dzīvokļu atlasei šādā secībā:
+
+```shell
+python find.py <reģions> <max-īre> <min-istabu skaits> <secības-kolonna>
+```
+
+Piemērs:
+
+```shell
+python find.py Āgenskalns 500 2 cena
+```
