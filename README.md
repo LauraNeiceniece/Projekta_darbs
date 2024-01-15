@@ -32,6 +32,8 @@ python find.py Āgenskalns 500 2 cena
 
 ## Izmantotās bibliotēkas
 
+scrapy
+
 ## Papildus avoti 
 
 https://www.ss.lv/lv/real-estate/flats/riga/all/hand_over/
