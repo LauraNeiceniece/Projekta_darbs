@@ -13,11 +13,11 @@ class DzivokliSpider(scrapy.Spider):
  
 
     def response_parser(self, response):
-        for selector in response.css('td.msga2-o.pp6'):
+        for selector in response.css('tr[id^="tr_"]'):
                
             yield {
                   
-                'address': selector.css('a::text').getall(),
+                'address': selector.css('td.msga2-o.pp6::text').getall(),
                 #'rooms': selector.css('td.msga2-o.pp6::text').getall(),
                 #'m2': selector.css('td.msg2 b a ::attr(href)').extract_first()
             }
