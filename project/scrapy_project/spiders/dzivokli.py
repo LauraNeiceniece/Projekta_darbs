@@ -69,7 +69,7 @@ if __name__ == '__main__':
         if len(dzivokli_data) == 0:
             print("nav ierakstu")
         else:
-            dzivokli_data_sorted = sorted(dzivokli_data, key=lambda x: x.get('Publicēšanas_datums', datetime.min), reverse=True)
+            dzivokli_data_sorted = sorted(dzivokli_data, key=lambda x: x.get(' publicēšanas_datums', datetime.min), reverse=True)
 
             with open('dzivokli_data.csv', 'w', newline='') as output_file_name:
                 writer = csv.DictWriter(output_file_name, fieldnames=dzivokli_data_sorted[0].keys())
