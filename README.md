@@ -4,30 +4,30 @@
 
 Izveidot programmu, kas automātiski atlasa lietotāja izvēlētiem kritērijiem atbilstošus īres dzīvokļus Rīgā no tīmekļa vietnes ss.lv un izveido CSV failu, kurā ievieto datus par atlasītajiem dzīvokļiem
 
-Lietotājs ievada vēlamo Rīgas reģionu, maksimālo īres cenu, minimālo istabu skaitu un izvēlas kolonnu pēc kuras izveidotais dzīvokļu saraksts tiks sakārtots.
+Lietotājs ievada vēlamo Rīgas reģionu, maksimālo īres cenu, minimālo istabu skaitu
 
 CSV failam jābūt veidotam šādā veidā: 
 
 ```csv
 
-adrese, istabu skaits, platība m2, cena, hipersaite
+adrese, istabu_skaits, platība_m2, cena, hipersaite, publicēšanas_datums
 
 ```
 
-Atkarībā no izvēlētās secības kolonnas (`adrese`, `istabu skaits`, `platība m2`, `cena`) sarakstam ir jābūt sakārtotam augošā secībā
+Atkarībā no publicēšanas datuma sarakstam ir jābūt sakārtotam no jaunākajiem ierakstiem līdz vecākajiem 
 
 ## Programmas izpilde
 
 Lietotājs terminālī ievada sev vēlamos kritērijus dzīvokļu atlasei šādā secībā:
 
 ```shell
-python find.py <reģions> <max-īre> <min-istabu skaits> <secības-kolonna>
+python project.py <reģions> <max-īre> <min-istabu skaits> 
 ```
 
 Piemērs:
 
 ```shell
-python find.py Āgenskalns 500 2 cena
+python project.py Āgenskalns 500 2 
 ```
 
 ## Izmantotās bibliotēkas
