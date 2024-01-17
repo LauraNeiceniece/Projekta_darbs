@@ -1,10 +1,12 @@
 # Projekta_darbs
 
+Bieži vien, it īpaši tikko studēt sākušiem jauniešiem, vai cilvēkiem, kuriem kādu dzīves apstākļu dēļ, piemēram, darba maiņas rezultātā nākas meklēt ērtāku dzīvesvietu, kas būs izdevīgāka jaunajiem apstākļiem, tāpēc, lai atvieglotu dzīvokļu meklēšanas procesu, tika radīta programma, kas palīdzētu lietotājam atrast sev piemērotāko dzīvokli ātrāk un ērtāk.
+
 ## Apraksts 
 
-Izveidot programmu, kas automātiski atlasa lietotāja izvēlētiem kritērijiem atbilstošus īres dzīvokļus Rīgā no tīmekļa vietnes ss.lv un izveido CSV failu, kurā ievieto datus par atlasītajiem dzīvokļiem
+Darba mērķis bija izveidot programmu, kas automātiski atlasa lietotāja izvēlētiem kritērijiem atbilstošus īres dzīvokļus Rīgā no tīmekļa vietnes ss.lv un izveido CSV failu, kurā ievieto datus par atlasītajiem dzīvokļiem
 
-Lietotājs ievada vēlamo Rīgas reģionu, maksimālo īres cenu, minimālo istabu skaitu
+Kā atlases kritērijus lietotājs ievada vēlamo Rīgas reģionu, maksimālo īres cenu, minimālo istabu skaitu
 
 CSV failam jābūt veidotam šādā veidā: 
 
@@ -14,25 +16,29 @@ adrese, istabu_skaits, platība_m2, cena, hipersaite, publicēšanas_datums
 
 ```
 
-Atkarībā no publicēšanas datuma sarakstam ir jābūt sakārtotam no jaunākajiem ierakstiem līdz vecākajiem 
+Atkarībā no publicēšanas datuma sarakstam ir jābūt sakārtotam no jaunākajiem ierakstiem augšgalā līdz vecākajiem ierakstiem lejā.
 
 ## Programmas izpilde
 
 Lietotājs terminālī ievada sev vēlamos kritērijus dzīvokļu atlasei šādā secībā:
 
 ```shell
-python project.py <reģions> <max-īre> <min-istabu skaits> 
+python python project/scrapy_project/spiders/dzivokli.py <reģions> <max-īre> <min-istabu skaits> 
 ```
 
 Piemērs:
 
 ```shell
-python project.py Āgenskalns 500 2 
+python python project/scrapy_project/spiders/dzivokli.py Āgenskalns 500 2 
 ```
 
 ## Izmantotās bibliotēkas
 
-scrapy
+scrapy - pielieto tīmekļa skrāpēšanai
+csv - lieto csv failu lasīšanai un rakstīšanai
+sys - nodrošina piekļuvi sistēmas specifiskiem parametriem un funkcijām
+datetime - tika pielietota, lai formatētu datumu un laiku
+urljoin - tikai pielietota, lai iegūtu pilnu hipersaiti, izgūtu no tīmekļa vietnes
 
 ## Papildus avoti 
 

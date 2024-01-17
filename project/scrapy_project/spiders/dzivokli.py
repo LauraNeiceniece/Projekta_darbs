@@ -23,13 +23,13 @@ class DzivokliSpider(scrapy.Spider):
             relative_link = selector.css('a::attr(href)').extract_first()
             absolute_link = urljoin(response.url, relative_link)
             info = selector.css('td.msga2-o.pp6::text, td.msga2-o.pp6 b::text').getall()
+            if len(info) < 5:
+                    continue
             rent_r = info[6]
             rent = ''.join(filter(str.isdigit, rent_r))
 
             if info[0] == region and int(rent) <= maxRent and int(info[2]) >= minRoomCount:
-                if len(info) < 5:
-                    continue
-
+                
                 yield scrapy.Request(absolute_link, callback=self.parse_apartment_page, meta={'item': {
                     'adrese': info[1],
                     ' istabu_skaits': info[2],
@@ -71,7 +71,7 @@ if __name__ == '__main__':
         else:
             dzivokli_data_sorted = sorted(dzivokli_data, key=lambda x: datetime.strptime(x.get(' publicēšanas_datums', '01.01.1970 00:00'), "%d.%m.%Y %H:%M"), reverse=True)
 
-            with open('dzivokli_data.csv', 'w', newline='') as output_file_name:
+            with open('dzivokli_data.csv', 'w', newline='',encoding='utf-8') as output_file_name:
                 writer = csv.DictWriter(output_file_name, fieldnames=dzivokli_data_sorted[0].keys())
                 writer.writeheader()
                 for row in dzivokli_data_sorted:
