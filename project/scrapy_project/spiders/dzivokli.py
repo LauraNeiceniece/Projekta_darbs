@@ -38,9 +38,9 @@ class DzivokliSpider(scrapy.Spider):
                     ' hipersaite': absolute_link
                 }})
 
-        next_page = response.css('a.navi[rel="next"]::attr(href)').extract_first()
-        if next_page:
-            yield response.follow(next_page, callback=self.response_parser)
+            next_page = response.css('a.navi[rel="next"]::attr(href)').extract_first()
+            if next_page:
+                yield response.follow(next_page, callback=self.response_parser)
 
     def parse_apartment_page(self, response):
         item = response.meta['item']
@@ -63,13 +63,13 @@ def dzivokli_spider_result():
 
 if __name__ == '__main__':
     if len(sys.argv) != 4:
-        print("Usage: python project/scrapy_project/spiders/dzivokli.py <region> <max-rent> <min-room-count>")
+        print("Usage: python project/scrapy_project/spiders/dzivokli.py <reģions> <max-īre> <min-istabu skaits> ")
     else:
         dzivokli_data = dzivokli_spider_result()
         if len(dzivokli_data) == 0:
             print("nav ierakstu")
         else:
-            dzivokli_data_sorted = sorted(dzivokli_data, key=lambda x: x.get(' publicēšanas_datums', datetime.min), reverse=True)
+            dzivokli_data_sorted = sorted(dzivokli_data, key=lambda x: datetime.strptime(x.get(' publicēšanas_datums', '01.01.1970 00:00'), "%d.%m.%Y %H:%M"), reverse=True)
 
             with open('dzivokli_data.csv', 'w', newline='') as output_file_name:
                 writer = csv.DictWriter(output_file_name, fieldnames=dzivokli_data_sorted[0].keys())
