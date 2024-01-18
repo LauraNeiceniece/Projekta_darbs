@@ -1,11 +1,11 @@
 import csv
 import sys
-import scrapy
+from urllib.parse import urljoin
 from datetime import datetime
+import scrapy
 from scrapy import signals
 from scrapy.crawler import CrawlerProcess
 from scrapy.signalmanager import dispatcher
-from urllib.parse import urljoin
 
 class DzivokliSpider(scrapy.Spider):
     name = "dzivokli"
@@ -63,7 +63,7 @@ def dzivokli_spider_result():
 
 if __name__ == '__main__':
     if len(sys.argv) != 4:
-        print("Usage: python project/scrapy_project/spiders/dzivokli.py <reģions> <max-īre> <min-istabu skaits> ")
+        print("Usage: python project/spiders/dzivokli.py <reģions> <max-īre> <min-istabu skaits> ")
     else:
         dzivokli_data = dzivokli_spider_result()
         if len(dzivokli_data) == 0:
