@@ -32,8 +32,15 @@ Piemērs:
 python project/spiders/dzivokli.py Āgenskalns 500 2 
 ```
 
-Programma nolasa informāciju no vietnes https://www.ss.lv/lv/real-estate/flats/riga/all/hand_over/ un automātiski pārvietojas uz nākamo sludinājumu lapu, līdz sasniegta beidzamā vietnes lapa. Nolasot informāciju par dzīvokļiem(adrese, istabu skaits, platība, stāvs, sērija, cena) šīs vērtības tiek izgūtas, kā saraksts, kur adrese ir elements[1], istabu skaits - elements[2] ... cena - elements[6], līdz ar to, csv failā tiek ievietoti tie elementi un to vērtības, kas atbilst nosacījumam un csv failā arī tiek ievietota no vietnes izgūtā hipersaite uz dzīvokļa sludinājumu. Atverot katra dzīvokļa sludinājuma lapu no tās tiek izgūts publicēšanas datums, pēc kura tiek sakārtoti ieraksti csv failā sākot ar jaunākajiem. Rezultātā tiek izveidots csv fails, kurā ir kritērijiem atbilstošie dzīvokļi sakārtoti iepriekšminētajā secībā.
-programmas kods atrodas dzivokli.py failā un tiek izveidots csv fails ar nosaukumu dzivokli_data.csv
+Programma nolasa informāciju no vietnes https://www.ss.lv/lv/real-estate/flats/riga/all/hand_over/ un automātiski pārvietojas uz nākamo sludinājumu lapu, līdz sasniegta beidzamā vietnes lapa. 
+
+Nolasot informāciju par dzīvokļiem(adrese, istabu skaits, platība, stāvs, sērija, cena) šīs vērtības tiek izgūtas, kā saraksts, kur adrese ir elements[1], istabu skaits - elements[2] ... cena - elements[6], līdz ar to, csv failā tiek ievietoti tie elementi un to vērtības, kas atbilst nosacījumam un csv failā arī tiek ievietota no vietnes izgūtā hipersaite uz dzīvokļa sludinājumu. 
+
+Atverot katra dzīvokļa sludinājuma lapu no tās tiek izgūts publicēšanas datums, pēc kura tiek sakārtoti ieraksti csv failā sākot ar jaunākajiem. 
+
+Rezultātā tiek izveidots csv fails, kurā ir kritērijiem atbilstošie dzīvokļi sakārtoti iepriekšminētajā secībā.
+
+Programmas kods atrodas dzivokli.py failā un tiek izveidots csv fails ar nosaukumu dzivokli_data.csv
 
 ## Izmantotās bibliotēkas
 
