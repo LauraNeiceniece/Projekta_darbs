@@ -63,7 +63,7 @@ def dzivokli_spider_result():
 
 if __name__ == '__main__':
     if len(sys.argv) != 4:
-        print("Usage: python project/spiders/dzivokli.py <reģions> <max-īre> <min-istabu skaits> ")
+        print("Usage: python project/dzivokli.py <reģions> <max-īre> <min-istabu skaits> ")
     else:
         dzivokli_data = dzivokli_spider_result()
         if len(dzivokli_data) == 0:
