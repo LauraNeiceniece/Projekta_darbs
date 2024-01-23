@@ -23,13 +23,13 @@ Atkarībā no publicēšanas datuma sarakstam ir jābūt sakārtotam no jaunāka
 Lietotājs terminālī ievada sev vēlamos kritērijus dzīvokļu atlasei šādā secībā:
 
 ```shell
-python project/spiders/dzivokli.py <reģions> <max-īre> <min-istabu skaits> 
+python project/dzivokli.py <reģions> <max-īre> <min-istabu skaits> 
 ```
 
 Piemērs:
 
 ```shell
-python project/spiders/dzivokli.py Āgenskalns 500 2 
+python project/dzivokli.py Āgenskalns 500 2 
 ```
 
 Programma nolasa informāciju no vietnes https://www.ss.lv/lv/real-estate/flats/riga/all/hand_over/ un automātiski pārvietojas uz nākamo sludinājumu lapu, līdz sasniegta beidzamā vietnes lapa. 
